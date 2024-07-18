@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de Similarité</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Résultats de Similarité</h1>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Document 1:</h5>
+                <pre class="card-text">{{ doc1 }}</pre>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Document 2:</h5>
+                <pre class="card-text">{{ doc2 }}</pre>
+            </div>
+        </div>
+        <hr>
+        <h2>Similarité en ignorant la casse</h2>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Les mots en commun</h5>
+                <pre class="card-text">{{ common_words }}</pre>
+            </div>
+        </div>
+        <div class="alert alert-info mt-3">
+            <strong>Similarité:</strong> {{ similarity_percentage }}
+        </div>
+        <hr>
+        <h2>Similarité sans ignorer la case</h2>
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Les mots en commun  </h5>
+                <pre class="card-text">{{ common_words_with_case }}</pre>
+            </div>
+        </div> 
+        <div class="alert alert-info mt-3">
+            <strong>Similarité:</strong> {{ similarity_percentage_with_case }}
+        </div>
+        <a href="{% url 'index' %}" class="btn btn-primary mt-3">Comparer d'autres documents</a>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

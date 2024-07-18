@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Analyse de Similarité</title>
+</head>
+<body>
+    <h1>Analyse de Similarité des Documents</h1>
+    <form method="POST" action="{% url 'compare_documents' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Comparer</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Similarité</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-3 bg-secondary text-center">Analyse de Similarité des Documents</h1>
+        <form method="post" action="{% url 'compare_documents' %}" enctype="multipart/form-data" class="bg-info">
+            {% csrf_token %}
+            <div class="form-group text-center pt-3">
+                <label for="document1">Document 1</label>
+                {{ form.document1 }}
+            </div>
+            <div class="form-group text-center">
+                <label for="document2">Document 2</label>
+                {{ form.document2 }}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Comparer</button>
+            </div>            
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
